@@ -90,6 +90,44 @@ body {
   color: #0b7a75;
 }
 
+/* サブネット電卓 */
+.subnet-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #cbd2d9;
+  border-radius: 10px;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 1.1rem;
+}
+
+.subnet-input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.subnet-result {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 12px;
+  margin: 12px 0 0;
+  font-size: 0.95rem;
+}
+
+.subnet-result dt {
+  color: #52606d;
+}
+
+.subnet-result dd {
+  margin: 0;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-weight: 700;
+}
+
+.subnet-error {
+  grid-column: 1 / -1;
+  color: #b91c1c;
+}
+
 /* スマホ */
 @media (max-width: 480px) {
   .clock {
