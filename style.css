@@ -90,6 +90,13 @@ body {
   color: #0b7a75;
 }
 
+/* メモ（スプレッドシートから読む） */
+.memo {
+  margin: 0;
+  padding-left: 1.2em;
+  line-height: 1.8;
+}
+
 /* サブネット電卓 */
 .subnet-input {
   width: 100%;

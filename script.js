@@ -121,3 +121,34 @@ function updateSubnet() {
 
 document.getElementById("subnet-input").addEventListener("input", updateSubnet);
 updateSubnet();
+
+// メモ（スプレッドシートを GAS のウェブアプリから読む）
+const GAS_URL = "https://script.google.com/macros/s/AKfycbwjLcmBQ-YLscrBr1EoX0phCHk3u6EJ-Vqd-e1JUGtiTex9-Z0YcLL5yhYvKjcoSXEe/exec";
+
+async function updateMemo() {
+  const title = document.getElementById("memo-title");
+  const list = document.getElementById("memo");
+  try {
+    const res = await fetch(GAS_URL);
+    const data = await res.json();
+    title.textContent = `📝 ${data.title}`;
+    list.replaceChildren();
+    for (const text of data.items) {
+      const li = document.createElement("li");
+      li.textContent = text;
+      list.append(li);
+    }
+    if (data.items.length === 0) {
+      const li = document.createElement("li");
+      li.textContent = "（シートの A2 から下に書くと、ここに出ます）";
+      list.append(li);
+    }
+  } catch (e) {
+    list.replaceChildren();
+    const li = document.createElement("li");
+    li.textContent = "読めませんでした";
+    list.append(li);
+  }
+}
+
+updateMemo();
