@@ -17,3 +17,19 @@ function updateClock() {
 
 updateClock();
 setInterval(updateClock, 1000);
+
+// 金曜日まで、あと何日かを出す
+function updateFriday() {
+  const day = new Date().getDay(); // 0=日 1=月 … 5=金 6=土
+  let text;
+  if (day === 0 || day === 6) {
+    text = "今日はお休み🎉";
+  } else if (day === 5) {
+    text = "今日は金曜日！";
+  } else {
+    text = `あと${5 - day}日`;
+  }
+  document.getElementById("friday").textContent = text;
+}
+
+updateFriday();
