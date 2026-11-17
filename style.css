@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Yu Gothic UI", "Meiryo", "Hiragino Sans", system-ui, sans-serif;
+  background: #f1f4f8;
+  color: #1f2933;
+}
+
+/* 上の時計と日付 */
+.header {
+  padding: 32px 16px 24px;
+  text-align: center;
+  background: linear-gradient(135deg, #0b7a75, #2563eb);
+  color: #ffffff;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.clock {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.date {
+  margin-top: 4px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* カードを並べる所（カードを足すと自動で並ぶ） */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+.card-title {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  color: #52606d;
+}
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.links a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #1e3a8a;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.links a:hover {
+  background: #dbe4ff;
+}
+
+/* スマホ */
+@media (max-width: 480px) {
+  .clock {
+    font-size: 2.4rem;
+  }
+}
